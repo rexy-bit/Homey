@@ -1,6 +1,8 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { usePropertieContext } from "../Contexts/PropertiesContext";
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
+import { useUserContext } from "../Contexts/UserContext";
+import PopUp from "../Components/PropertiesComponents/PopUp";
 
 
 const Details = () => {
@@ -8,13 +10,26 @@ const Details = () => {
     const {id} = useParams();
     const {properties} = usePropertieContext();
 
+    const navigate = useNavigate();
+
     const propertie = properties.find((p)=> p.id === id);
+        const [showPop, setShowPop] = useState(()=>{
+            const saved = localStorage.getItem("showPop");
+    
+            return saved ? JSON.parse(saved) : false;
+        });
+    
+        useEffect(()=>{
+            localStorage.setItem("showPop", JSON.stringify(showPop));
+        }, [showPop]);
 
     if(!propertie){
         return <div className="text-center font-bold mt-15">Propertie not found</div>
     }
 
     const [index, setIndex] = useState<number>(0);
+    const {user, addToFavorites, isFavorite} = useUserContext();
+
 
     const nextImage = () => {
         if(index < propertie?.images.length - 1){
@@ -53,7 +68,18 @@ const Details = () => {
 
                     <div className="flex flex-col p-3 mt-2 w-[600px] max-[750px]:w-[400px] max-[450px]:w-[300px]">
                         <p className="flex flex-row items-center gap-2 text-[1.1em]"><div className="w-3 h-3 bg-green-700 rounded-full"></div> {propertie.type} for {propertie.service}</p>
+                        <div className="flex flex-row w-full justify-between items-center">
                         <p className="font-black text-[1.56em] mt-1">{propertie.price} Dzd</p>
+                        <button className="transition-all duration-300 shadow-md rounded-full p-2 px-3 right-2 top-2 bg-black/50 cursor-pointer max-[650px]:top-30 active:scale-90" onClick={()=>{
+                            if(!user){
+                                setShowPop(true);
+                            }else{
+                                addToFavorites(propertie);
+                            }
+                        }}>
+                            <i style={{color : isFavorite(propertie) ? "red" : "white"}} className="fa-solid fa-heart  text-[0.9em]"></i>
+                        </button>
+                        </div>
                         <div className="flex flex-row items-center gap-5">
                             <p><strong>{propertie.rooms}</strong> rooms</p>
                             <p><strong>{propertie.surface}</strong> sqm</p>
@@ -67,8 +93,12 @@ const Details = () => {
 
                     
                   </div>
+
+                  {showPop && <PopUp setShowPop={setShowPop}/>}
                 </>
              }
+
+             <button className="px-3 py-1 bg-[#1D4ED8] text-white font-bold rounded-3xl fixed top-16 left-3 cursor-pointer transition-opacity duration-200 hover:opacity-70 active:opacity-50" onClick={()=>navigate(-1)}>&#8592; Back</button>
 
         </section>
     )

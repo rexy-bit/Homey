@@ -7,6 +7,7 @@ import { UserProvider } from "./Contexts/UserContext"
 import { PropertieProvider, usePropertieContext } from "./Contexts/PropertiesContext"
 import Properties from "./Pages/Properties"
 import Details from "./Pages/Details"
+import Favorites from "./Pages/Favorites"
 
 function App() {
 
@@ -45,6 +46,13 @@ function App() {
            <Header/>
            <Details/>
         </>
+        }/>
+
+        <Route path="/favorites" element={
+          <>
+            <Header/>
+            <Favorites/>
+          </>
         }/>
      </Routes>
      </PropertieProvider>
