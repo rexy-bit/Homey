@@ -1,8 +1,8 @@
-import { createContext, useState, useEffect, useContext } from "react";
-import type { User } from "./Types";
+import { createContext, useState, useEffect, useContext} from "react";
+import type { Propertie, User } from "./Types";
 import { auth, db, googleProvider } from "../Config/fireBase";
 import { signInWithPopup, signOut } from "firebase/auth";
-import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import type {User as FirebaseUser} from "firebase/auth";
 
@@ -17,6 +17,8 @@ interface UserContextType{
     initializing  : boolean;
     loadingUsers : boolean;
     logOut : ()=> void;
+    addToFavorites : (p : Propertie) => void;
+    isFavorite : (p : Propertie)=> boolean;
 }
 
 const UserContext = createContext<UserContextType | null>(null);
@@ -134,8 +136,58 @@ export const UserProvider = ({children} : {children : React.ReactNode}) => {
   }, []);
 
 
+  const addToFavorites = async(propertie : Propertie) => {
+
+     
+    const trouve = user?.favorites.find((p)=> p.id === propertie.id);
+
+    if(!user) return null;
+
+    if(trouve){
+        const newFavorites = user?.favorites.filter((p)=> p.id !== propertie.id);
+
+        try{
+            const userRef = doc(db, "users", user?.id);
+            await updateDoc(userRef, {
+                favorites: [...newFavorites]
+            });
+            setUser({
+                ...user,
+                favorites : [...newFavorites]
+            });
+        }catch(err){
+            console.error('Error : ' , err);
+        }
+
+    }else{
+        try{
+            const userRef = doc(db, "users", user.id);
+            await updateDoc(userRef, {
+                favorites : [...user.favorites, propertie]
+            });
+            setUser({
+                ...user,
+                favorites : [...user.favorites, propertie]
+            });
+        }catch(err){
+            console.error('Error : ', err);
+        }
+    }
+  }
+
+  const isFavorite = (propertie : Propertie) => {
+    const find = user?.favorites.find((p)=> p.id === propertie.id);
+
+    if(find){
+        return true;
+    }
+
+    return false;
+  }
+
+
     return(
-        <UserContext.Provider value={{user, setUser, users, setUsers, signInLoading, initializing, signInwithGoogle, loadingUsers, logOut, setSignInLoading}}>
+        <UserContext.Provider value={{user, setUser, users, setUsers, signInLoading, initializing, signInwithGoogle, loadingUsers, logOut, setSignInLoading, addToFavorites, isFavorite}}>
             {children}
         </UserContext.Provider>
     );

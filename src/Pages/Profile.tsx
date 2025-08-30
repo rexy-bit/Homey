@@ -11,7 +11,7 @@ const Profile = () => {
         return(
             <section className="min-h-screen flex flex-col items-center bg-blue-100">
 
-                <div className="flex flex-col mt-10 jusitfy-center items-center gap-5">
+                <div className="flex flex-col mt-20 jusitfy-center items-center gap-5">
                    <i className="fa-solid fa-spinner fa-spin-pulse text-[#1D4ED8] text-[3em]"></i>
                    <p className="text-[1.3em] font-bold text-[#1D4ED8]">Loading...</p>
                 </div>
