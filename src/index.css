@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer components{
+    .linkNav{
+        @apply text-[1em] font-bold text-[#1D4ED8] transition-all duration-200 hover:opacity-80 active:opacity-60 cursor-pointer max-[600px]:text-[0.9em] max-[600px]:font-[500]
+    }
+    .linkNav2{
+         @apply text-[1em] font-bold text-white transition-all duration-200 hover:opacity-80 active:opacity-60 cursor-pointer max-[600px]:text-[0.9em] max-[600px]:font-[500]
+    }
+}
