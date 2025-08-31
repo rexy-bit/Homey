@@ -36,3 +36,9 @@ export interface User{
     requests : Request[];
     role : string;
 }
+
+export interface Filter{
+    type : string;
+    city : string;
+    service : string;
+}

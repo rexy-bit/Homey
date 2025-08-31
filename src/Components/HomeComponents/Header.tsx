@@ -15,14 +15,15 @@ const Header = () => {
     }, [showNav]);
 
     return(
-        <header className="flex flex-row w-full h-[55px] justify-between fixed top-0  items-center px-2 shadow-xl  max-[500px]:px-6 bg-white z-50">
+        <header className="flex flex-row w-full h-[55px] justify-between fixed top-0  items-center px-2 shadow-xl  max-[500px]:px-8 bg-white z-50">
             <h1 className="text-[#1D4ED8] font-black text-[2em] cursor-pointer max-[600px]:text-[1.7em]"><Link to="/">Homey</Link></h1>
 
             <nav className="max-[500px]:hidden flex flex-row justify-center items-center gap-4 max-[600px]:gap-2">
                 <Link to="/" className="linkNav">Home</Link>
                 <Link to="/properties" className="linkNav">Properties</Link>
                 <Link to="/favorites" className="linkNav">Favorites</Link>
-                <Link to="/requests" className="linkNav">Requests</Link>
+                <Link to="/services" className="linkNav">Services</Link>
+                <Link to="/contact" className="linkNav">Contact Us</Link>
                 <Link to="/profile" className="linkNav text-[1.4em] max-[600px]:text-[1.2em]"><i className="fa-solid fa-house-user"></i></Link>
             </nav>
 
@@ -34,12 +35,14 @@ const Header = () => {
 
             {showNav && 
              <section onClick={()=> setShowNav(false)} className="fixed inset-0">
-              <nav onClick={(e)=> e.stopPropagation()} className="z-50 flex flex-col justify-center  absolute top-18 right-5 bg-[#1D4ED8] rounded-lg p-2 w-[100px] gap-1">
-                <Link to="/" className="linkNav2">Home</Link>
-                <Link to="/properties" className="linkNav2">Properties</Link>
-                <Link to="/favorites" className="linkNav2">Favorites</Link>
-                <Link to="/requests" className="linkNav2">Requests</Link>
-                <Link to="/profile" className="linkNav2 text-[1.4em]"><i className="fa-solid fa-house-user"></i></Link>
+              <nav onClick={(e)=> e.stopPropagation()} className="z-50 flex flex-col justify-center  absolute top-18 right-5 bg-[#1D4ED8] rounded-lg p-2 w-[100px] gap-2">
+                <Link to="/" onClick={()=> setShowNav(false)} className="linkNav2">Home</Link>
+                <Link to="/properties" onClick={()=> setShowNav(false)} className="linkNav2">Properties</Link>
+                <Link to="/favorites" onClick={()=> setShowNav(false)} className="linkNav2">Favorites</Link>
+                <Link to="/services" onClick={()=> setShowNav(false)} className="linkNav2">Services</Link>
+                <Link to="/contact" className="linkNav2" onClick={()=> setShowNav(false)}>Contact Us</Link>
+                <Link to="/profile" onClick={()=> setShowNav(false)} className="linkNav2 text-[1.4em]"><i className="fa-solid fa-house-user"></i></Link>
+                
               </nav>
               </section>
             }

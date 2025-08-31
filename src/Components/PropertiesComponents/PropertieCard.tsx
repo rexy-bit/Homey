@@ -25,7 +25,7 @@ const Propertie = ({propertie} : {propertie : Propertie}) => {
     
     return(
         <>
-        <div className="relative group flex flex-row items-center w-[580px] p-5 bg-blue-500 h-[290px]  rounded-l-[290px] rounded-r-3xl max-[650px]:flex-col max-[650px]:w-[300px] max-[650px]:rounded-l-xl max-[650px]:h-[500px] max-[650px]:rounded-tl-full max-[650px]:rounded-tr-full">
+        <div className="relative group flex flex-row items-center w-[580px] p-5 bg-blue-500 h-[290px]  rounded-l-[290px] rounded-r-3xl max-[650px]:flex-col max-[650px]:w-[300px] max-[650px]:rounded-l-xl max-[650px]:h-[500px] max-[650px]:rounded-tl-full max-[650px]:rounded-tr-full property-card">
             <img src={propertie.images[0]} alt={propertie.title} className="w-[300px] h-[300px] object-cover rounded-full absolute left-0 border-5 border-white max-[650px]:top-0 max-[650px]:w-[200px] max-[650px]:h-[200px] max-[650px]:left-11"/>
 
             <div className="flex flex-col gap-1 text-white absolute right-1 w-[250px] max-[650px]:relative max-[650px]:mt-50 max-[650px]:justify-center max-[650px]:items-center max-[650px]:text-center">

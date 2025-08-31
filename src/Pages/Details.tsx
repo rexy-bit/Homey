@@ -23,12 +23,14 @@ const Details = () => {
             localStorage.setItem("showPop", JSON.stringify(showPop));
         }, [showPop]);
 
+            const [index, setIndex] = useState<number>(0);
+    const {user, addToFavorites, isFavorite} = useUserContext();
+
     if(!propertie){
         return <div className="text-center font-bold mt-15">Propertie not found</div>
     }
 
-    const [index, setIndex] = useState<number>(0);
-    const {user, addToFavorites, isFavorite} = useUserContext();
+
 
 
     const nextImage = () => {
@@ -67,7 +69,7 @@ const Details = () => {
                     <p className="mt-1 text-center">{index + 1}/{propertie.images.length}</p>
 
                     <div className="flex flex-col p-3 mt-2 w-[600px] max-[750px]:w-[400px] max-[450px]:w-[300px]">
-                        <p className="flex flex-row items-center gap-2 text-[1.1em]"><div className="w-3 h-3 bg-green-700 rounded-full"></div> {propertie.type} for {propertie.service}</p>
+                        <div className="flex flex-row items-center gap-2 text-[1.1em]"><div className="w-3 h-3 bg-green-700 rounded-full"></div> {propertie.type} for {propertie.service}</div>
                         <div className="flex flex-row w-full justify-between items-center">
                         <p className="font-black text-[1.56em] mt-1">{propertie.price} Dzd</p>
                         <button className="transition-all duration-300 shadow-md rounded-full p-2 px-3 right-2 top-2 bg-black/50 cursor-pointer max-[650px]:top-30 active:scale-90" onClick={()=>{
@@ -88,9 +90,9 @@ const Details = () => {
  
                           <p className="mt-1">{propertie.description}</p>
 
-                          <p className="mt-1 text-gray-800">For more information contact : <i className="fa-solid fa-phone"></i> +213 {propertie.agentNumber}</p>
+                          <div className="mt-1 text-gray-800 flex flex-col leading-5"><p >For more information or to schedule a free visit with one of our professional agents, please contact us at:</p><p><i className="fa-solid fa-phone"></i> <i className="fa-brands fa-whatsapp text-[1.3em] ml-1"></i> +213 {propertie.agentNumber}</p></div>
                     </div> 
-
+  
                     
                   </div>
 

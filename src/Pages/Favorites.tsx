@@ -27,7 +27,7 @@ const Favorites = () => {
 
     return(
         <section className="flex flex-col min-h-screen items-center">
-            <h1 className="text-black font-black text-[1.5em] mt-10 underline">Favorites</h1>
+            <h1 className=" font-black text-[#1D4ED8] text-[2em] mt-10 underline">Favorites</h1>
           {!user ?
             <div className="flex flex-col justify-center items-center">
                 <p>Sign In to see add favorites, see properties and benefit from our services</p>

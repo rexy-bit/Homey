@@ -8,6 +8,12 @@ import { PropertieProvider, usePropertieContext } from "./Contexts/PropertiesCon
 import Properties from "./Pages/Properties"
 import Details from "./Pages/Details"
 import Favorites from "./Pages/Favorites"
+import { SearchProvider } from "./Contexts/SearchContext"
+import Search from "./Pages/Search"
+import { FilterProvider } from "./Contexts/FilterContext"
+import Filter from "./Pages/Filter"
+import Services from "./Pages/Services"
+import Contact from "./Pages/Contact"
 
 function App() {
 
@@ -17,6 +23,8 @@ function App() {
    
     <UserProvider>
       <PropertieProvider>
+        <SearchProvider>
+          <FilterProvider>
      <Routes>
        
 
@@ -54,7 +62,36 @@ function App() {
             <Favorites/>
           </>
         }/>
+
+          <Route path="/search" element={<>
+         <Header/>
+         <Search/>
+       </>}/>
+
+       <Route path="/filter" element={
+          <>
+            <Header/>
+            <Filter/>
+          </>
+       }/>
+
+       <Route path="/services" element={
+        <>
+          <Header/>
+          <Services/>
+        </>
+       }/>
+
+         <Route path="/contact" element={
+          <>
+             <Header/>
+             <Contact/>
+          </>
+         }/>
      </Routes>
+
+            </FilterProvider>
+        </SearchProvider>
      </PropertieProvider>
      </UserProvider>
   )
