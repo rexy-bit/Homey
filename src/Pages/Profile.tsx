@@ -29,7 +29,7 @@ const Profile = () => {
               <p className="text-[1.1em] w-[500px] mt-5 text-center max-[550px]:w-[290px] max-[550px]:text-[1em]">Create an account or log in to access your personal dashboard and enjoy all our services: explore and save your favorite properties, post and manage your listings, connect with trusted real estate agents, and easily track your inquiries and messages—all in one place.</p>
 
               <img src="/villahydra1.avif" alt="" className="w-[300px] rounded-full h-[300px] object-cover border-2 border-white mt-5" />
-
+  
               <p className="text-yellow-950 font-bold mt-5 max-[600px]:w-[300px] text-center">Homey — where you find your home everywhere.</p>
 
               <button onClick={signInwithGoogle} className="text-white bg-[#1D4ED8] px-3 py-2 font-bold rounded-lg mt-5 cursor-pointer transition-all duration-200 hover:text-[#1D4ED8] hover:bg-white hover:border hover:border-[#1D4ED8] active:scale-90">Sign In with Google <i className="fa-brands fa-google"></i></button>

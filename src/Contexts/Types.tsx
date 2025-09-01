@@ -21,12 +21,14 @@ export interface Propertie{
 
 export interface Request{
     id : string;
-    name : string;
     userId : string;
+    userName : string;
+    name : string;
     email : string;
-    propertie : Propertie;
-    requestDescription : string;
-    status : string;
+    number : string;
+    service : string;
+    details : string;
+    requestDate : string;
 }
 export interface User{
     id : string;

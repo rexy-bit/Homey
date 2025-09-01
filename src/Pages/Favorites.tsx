@@ -29,7 +29,7 @@ const Favorites = () => {
         <section className="flex flex-col min-h-screen items-center">
             <h1 className=" font-black text-[#1D4ED8] text-[2em] mt-10 underline">Favorites</h1>
           {!user ?
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center max-[600px]:w-[300px] text-center">
                 <p>Sign In to see add favorites, see properties and benefit from our services</p>
                 <button className="text-white bg-[#1D4ED8] px-3 py-2 font-bold rounded-lg mt-5 cursor-pointer transition-all duration-200 hover:text-[#1D4ED8] hover:bg-white hover:border hover:border-[#1D4ED8] active:scale-90" onClick={()=>navigate("/profile")}>Sign In</button>
             </div>

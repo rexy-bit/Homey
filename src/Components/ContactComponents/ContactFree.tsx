@@ -4,7 +4,7 @@ import { memo } from "react";
 const ContactFree = () => {
 
     return(
-        <div className="flex flex-row w-[1000px] gap-10 items-center mt-10 max-[1050px]:w-[700px] max-[1050px]:justify-center max-[750px]:flex-col max-[750px]:w-[300px] max-[750px]:gap-5">
+        <div className="flex flex-row w-[1000px] gap-10 items-center mt-10 max-[1050px]:w-[700px] max-[1050px]:justify-center max-[750px]:flex-col max-[750px]:w-[300px] max-[750px]:gap-5" id="call">
              <img src="/consulting.jpg" alt="" className="w-[600px] h-[300px] object-cover slideLeft max-[1050px]:w-[300px] max-[1050px]:h-[150px] rounded-lg"/>
              <div className="slideRight flex flex-col max-[750px]:items-center">
 
