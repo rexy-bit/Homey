@@ -1,10 +1,10 @@
 
 import { Route, Routes } from "react-router-dom"
-import Header from "./Components/HomeComponents/Header"
+
 import Home from "./Pages/Home"
 import Profile from "./Pages/Profile"
 import { UserProvider } from "./Contexts/UserContext"
-import { PropertieProvider, usePropertieContext } from "./Contexts/PropertiesContext"
+import { PropertieProvider } from "./Contexts/PropertiesContext"
 import Properties from "./Pages/Properties"
 import Details from "./Pages/Details"
 import Favorites from "./Pages/Favorites"
@@ -20,6 +20,10 @@ import UserRoute from "./Layouts/UserRoute"
 import PublicLayout from "./Layouts/PublicLayout"
 import AdminRoute from "./Layouts/AdminRoute"
 import AdminProfile from "./AdminPages/AdminProfile"
+import AdminProperties from "./AdminPages/AdminProperties"
+import { SearchAdminPropertyProvider } from "./AdminContext/SearchAdminPropertie"
+import Modify from "./AdminPages/Modify"
+import Add from "./AdminPages/Add"
 
 function App() {
 
@@ -32,6 +36,7 @@ function App() {
         <SearchProvider>
           <FilterProvider>
             <RequestProvider>
+              <SearchAdminPropertyProvider>
      <Routes>
        
         <Route element={
@@ -115,9 +120,7 @@ function App() {
               </>
             }/>
             <Route path="properties" element={<>
-              <div>
-                Properties
-              </div>
+              <AdminProperties/>
               </>}/>
             <Route path="users" element={
               <>
@@ -128,9 +131,23 @@ function App() {
             <Route path="profile" element={<>
               <AdminProfile/>
                 </>}/>
+
+            <Route path="requests" element={<>
+              <div>Requests</div>
+                </>}/>
+
+                <Route path="modify/:id" element={
+          <Modify/>
+         }/>
+
+         <Route path="add" element={
+          <Add/>
+         }/>
          </Route>
+         
      </Routes>
 
+                 </SearchAdminPropertyProvider>
               </RequestProvider>
             </FilterProvider>
         </SearchProvider>

@@ -29,6 +29,7 @@ export interface Request{
     service : string;
     details : string;
     requestDate : string;
+    status : string;
 }
 export interface User{
     id : string;

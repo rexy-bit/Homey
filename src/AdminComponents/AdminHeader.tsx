@@ -18,12 +18,13 @@ const AmdinHeader = () => {
 
     return(
          <header className="flex flex-row w-full h-[55px] justify-between fixed top-0  items-center px-2 shadow-xl  max-[500px]:px-8 bg-white z-50">
-            <h1 className="text-[#1D4ED8] font-black text-[2em] cursor-pointer max-[600px]:text-[1.7em]"><Link to="/">Homey</Link></h1>
+            <h1 className="text-[#1D4ED8] font-black text-[2em] cursor-pointer max-[600px]:text-[1.7em]"><Link to="/admin/dashboard">Admin Page</Link></h1>
 
             <nav className="max-[500px]:hidden flex flex-row justify-center items-center gap-4 max-[600px]:gap-2">
                 <Link to="/admin/dashboard" className="linkNav">Dashboard</Link>
                 <Link to="/admin/properties" className="linkNav">Properties</Link>
                 <Link to="/admin/users" className="linkNav">Users</Link>
+                <Link to="/admin/requests" className="linkNav">Requests</Link>
                 <Link to="/admin/profile" className="linkNav text-[1.4em] max-[600px]:text-[1.2em]"><i className="fa-solid fa-house-user"></i></Link>
             </nav>
 
@@ -39,7 +40,7 @@ const AmdinHeader = () => {
                 <Link to="/admin/dashboard" onClick={()=> setShowNav(false)} className="linkNav2">Dashboard</Link>
                 <Link to="/admin/properties" onClick={()=> setShowNav(false)} className="linkNav2">Properties</Link>
                 <Link to="/admin/users" onClick={()=> setShowNav(false)} className="linkNav2">Users</Link>
-                
+                <Link to="/admin/requests" onClick={()=> setShowNav(false)} className="linkNav2">Requests</Link>
                 <Link to="/admin/profile" onClick={()=> setShowNav(false)} className="linkNav2 text-[1.4em]"><i className="fa-solid fa-house-user"></i></Link>
                 
               </nav>

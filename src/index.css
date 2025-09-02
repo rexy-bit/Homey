@@ -7,6 +7,13 @@
     .linkNav2{
          @apply text-[1em] font-bold text-white transition-all duration-200 hover:opacity-80 active:opacity-60 cursor-pointer max-[600px]:text-[0.9em] max-[600px]:font-[500]
     }
+    .inputType{
+      @apply w-[500px] bg-gray-50 py-1 px-3 rounded-3xl border border-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 max-[750px]:w-[250px] max-[450px]:w-[200px]
+    }
+    .selectType{
+      @apply w-[300px] bg-gray-50 py-1 px-3 rounded-[5px] border border-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 max-[750px]:w-[250px] max-[450px]:w-[200px]
+    }
+
 }
 
 @keyframes fadeInUp {

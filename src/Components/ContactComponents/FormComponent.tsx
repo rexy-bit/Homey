@@ -2,7 +2,7 @@ import { memo, useState, useRef } from "react"
 import type { Request } from "../../Contexts/Types"
 import { useRequestsContext } from "../../Contexts/RequestsContext";
 import {db} from "../../Config/fireBase"
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { addDoc, collection,  updateDoc } from "firebase/firestore";
 import { useUserContext } from "../../Contexts/UserContext";
 
 
@@ -17,7 +17,8 @@ const FormComponent = () => {
         number : "",
         service : "",
         details : "",
-        requestDate : ""
+        requestDate : "",
+        status : "unCkecked",
     });
     const {user} = useUserContext();
 
@@ -59,8 +60,8 @@ const FormComponent = () => {
             number : request.number,
             service : request.service,
             details : request.details,
-            requestDate : new Date().toISOString().split("T")[0] 
-
+            requestDate : new Date().toISOString().split("T")[0] ,
+            status : "unChecked"
         })
 
         await updateDoc(docRef, {
@@ -76,7 +77,8 @@ const FormComponent = () => {
             number : request.number,
             service : request.service,
             details : request.details,
-            requestDate : new Date().toISOString().split("T")[0] 
+            requestDate : new Date().toISOString().split("T")[0],
+            status : "unChecked"
         }]
 
         setRequests(newRequests);
@@ -90,7 +92,8 @@ const FormComponent = () => {
                     number: "",
                     service: "",
                     details: "",
-                    requestDate: ""
+                    requestDate: "",
+                    status : "unChecked"
                     });
 
 
