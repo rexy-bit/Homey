@@ -63,7 +63,7 @@ const Details = () => {
                     <h1 className="text-[1.2em] font-bold text-center">{propertie.title}</h1>
                     <div className="flex flex-row items-center justify-center gap-5 mt-5">
                        <div onClick={previousImage} className="text-[2em] font-bold cursor-pointer transition-opacity duration-200 hover:opacity-70 active:opacity-50">&#10094;</div>
-                       <img src={propertie.images[index]} alt={propertie.title} className="w-[600px] h-[600px] object-cover rounded-lg max-[750px]:w-[300px] max-[750px]:h-[300px] max-[450px]:w-[200px] max-[450px]:h-[200px]"/>
+                       <img src={propertie.images[index]} alt={propertie.title} className="w-[400px] h-[400px] object-cover rounded-lg max-[750px]:w-[300px] max-[750px]:h-[300px] max-[450px]:w-[200px] max-[450px]:h-[200px]"/>
                        <div onClick={nextImage} className="text-[2em] font-bold cursor-pointer transition-opacity duration-200 hover:opacity-70 active:opacity-50">&#10095;</div>
                     </div>
                     <p className="mt-1 text-center">{index + 1}/{propertie.images.length}</p>

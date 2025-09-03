@@ -24,6 +24,9 @@ import AdminProperties from "./AdminPages/AdminProperties"
 import { SearchAdminPropertyProvider } from "./AdminContext/SearchAdminPropertie"
 import Modify from "./AdminPages/Modify"
 import Add from "./AdminPages/Add"
+import Requests from "./AdminPages/Requests"
+import Users from "./AdminPages/Users"
+import Dashboard from "./AdminPages/Dashboard"
 
 function App() {
 
@@ -116,7 +119,7 @@ function App() {
          }>
             <Route path="dashboard" element={
               <>
-              <div>Dashboard</div>
+              <Dashboard/>
               </>
             }/>
             <Route path="properties" element={<>
@@ -124,17 +127,13 @@ function App() {
               </>}/>
             <Route path="users" element={
               <>
-                 <div>
-                  Users
-                 </div>
+                 <Users/>
               </>}/>
             <Route path="profile" element={<>
               <AdminProfile/>
                 </>}/>
 
-            <Route path="requests" element={<>
-              <div>Requests</div>
-                </>}/>
+          
 
                 <Route path="modify/:id" element={
           <Modify/>
@@ -143,7 +142,13 @@ function App() {
          <Route path="add" element={
           <Add/>
          }/>
+
+          <Route path="requests" element={
+          <Requests/>
+         }/>
          </Route>
+
+        
          
      </Routes>
 

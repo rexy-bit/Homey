@@ -21,7 +21,7 @@ const PropertieAdminCard = ({p} : {p : Propertie}) => {
 
     return(
         <>
-        <div className="w-[300px] h-[300px] border border-gray-400 rounded-2xl property-card">
+        <div className="w-[300px] h-[300px] border border-gray-400 rounded-2xl property-card bg-gray-50">
             <img src={p.images[0]} alt={p.title} className="h-[150px] w-full object-cover rounded-t-2xl"/>
             <div className="p-2 flex flex-col">
             <p className="text-gray-900 text-center leading-5">{p.title}</p>

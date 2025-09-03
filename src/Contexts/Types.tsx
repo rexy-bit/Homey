@@ -45,3 +45,10 @@ export interface Filter{
     city : string;
     service : string;
 }
+
+export interface Testimonial{
+    picture : string;
+    name : string;
+    service : string;
+    testimonial : string;
+}
