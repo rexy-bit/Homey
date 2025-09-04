@@ -27,6 +27,7 @@ import Add from "./AdminPages/Add"
 import Requests from "./AdminPages/Requests"
 import Users from "./AdminPages/Users"
 import Dashboard from "./AdminPages/Dashboard"
+import GenralFooter from "./Components/GenralFooter"
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
           <>
             
             <Profile/>
+            <GenralFooter/>
           </>
         }/>
 
@@ -68,6 +70,7 @@ function App() {
           <>
             
             <Properties/>
+            <GenralFooter/>
           </>
         }/>
 
@@ -75,6 +78,7 @@ function App() {
         <>
         
            <Details/>
+           <GenralFooter/>
         </>
         }/>
 
@@ -82,18 +86,21 @@ function App() {
           <>
          
             <Favorites/>
+            <GenralFooter/>
           </>
         }/>
 
           <Route path="/search" element={<>
          
          <Search/>
+         <GenralFooter/>
        </>}/>
 
        <Route path="/filter" element={
           <>
             
             <Filter/>
+            <GenralFooter/>
           </>
        }/>
 
@@ -101,6 +108,7 @@ function App() {
         <>
        
           <Services/>
+          <GenralFooter/>
         </>
        }/>
 
@@ -108,6 +116,7 @@ function App() {
           <>
             
              <Contact/>
+             <GenralFooter/>
           </>
          }/>
          </Route>

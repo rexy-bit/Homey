@@ -5,6 +5,9 @@ import Services from "./Services";
 import HomeServices from "../Components/HomeComponents/HomeServices";
 import Testimonials from "../Components/HomeComponents/Testimonials";
 import TestimonialsHome from "../Components/HomeComponents/TestimonialsHome";
+import Why from "../Components/HomeComponents/Why";
+import Faq from "../Components/HomeComponents/Faq";
+import Footer from "../Components/HomeComponents/Footer";
 
 
 const Home = () => {
@@ -35,6 +38,9 @@ const Home = () => {
             <About/>
             <HomeServices/>
             <TestimonialsHome/>
+            <Why/>
+            <Faq/>
+            <Footer/>
         </section>
     );
 }

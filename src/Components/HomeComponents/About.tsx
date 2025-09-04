@@ -3,7 +3,7 @@ import  { memo } from "react";
 const About = () => {
 
     return(
-        <section className="w-full bg-white flex flex-col justify-center items-center">
+        <section className="w-full bg-white flex flex-col justify-center items-center" id="about">
             <h1 className="text-[#1D4ED8] font-black text-[2.5em] mt-5">About Us</h1>
 
             <div className="flex flex-row justify-center items-center gap-10 mt-10 mb-15 max-[1000px]:flex-col">

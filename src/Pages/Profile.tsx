@@ -1,6 +1,8 @@
 import { memo } from "react";
 import { useUserContext } from "../Contexts/UserContext"
 import { Link } from "react-router-dom";
+import Footer from "../Components/HomeComponents/Footer";
+import GenralFooter from "../Components/GenralFooter";
 
 const Profile = () => {
 
@@ -32,7 +34,7 @@ const Profile = () => {
   
               <p className="text-yellow-950 font-bold mt-5 max-[600px]:w-[300px] text-center">Homey — where you find your home everywhere.</p>
 
-              <button onClick={signInwithGoogle} className="text-white bg-[#1D4ED8] px-3 py-2 font-bold rounded-lg mt-5 cursor-pointer transition-all duration-200 hover:text-[#1D4ED8] hover:bg-white hover:border hover:border-[#1D4ED8] active:scale-90">Sign In with Google <i className="fa-brands fa-google"></i></button>
+              <button onClick={signInwithGoogle} className="text-white bg-[#1D4ED8] px-3 py-2 font-bold rounded-lg mt-5 cursor-pointer transition-all duration-200 hover:text-[#1D4ED8] hover:bg-white hover:border hover:border-[#1D4ED8] active:scale-90 mb-15">Sign In with Google <i className="fa-brands fa-google"></i></button>
             </div>
           </section>
           : 
@@ -52,6 +54,8 @@ const Profile = () => {
             <button className="text-white bg-[#1D4ED8] px-3 py-2 font-bold rounded-lg mt-5 cursor-pointer transition-all duration-200 hover:text-[#1D4ED8] hover:bg-white hover:border hover:border-[#1D4ED8] active:scale-90" onClick={logOut}>Log Out</button>
 
             </div>
+
+           
           </section>
            
     )
